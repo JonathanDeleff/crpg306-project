@@ -1,19 +1,17 @@
 "use client";
-import Link from "next/link";
+import { Header } from "@/components/header";
 
-const Recipes = () => {
-  return (
-      <Link className="border-2 border-slate-400 p-1 m-1" href="/shoppingList">Recipes</Link>
-  );
-};
+
 
 export default function Home() {
 
   
 
   return (
-    <main className="pt-36 w-full flex">
-      <Recipes />
+    <main className="w-screen h-screen">
+      <Header/>
+      <p className="flex w-full h-4/6 justify-center items-center">Welcome to the shopping list</p>
     </main>
+    
   )
 }
