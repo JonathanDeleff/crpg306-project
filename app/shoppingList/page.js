@@ -2,7 +2,7 @@
 
 import { useUserAuth } from "../_utils/auth-context";
 import { Header } from "@/components/header";
-import { ToShoppingList } from "@/components/buttons";
+import { ToMobileList, ToShoppingList } from "@/components/buttons";
 
 export default function Page() {
   
@@ -31,6 +31,7 @@ export default function Page() {
           <div className="flex flex-col justify-center items-center">
             <p className="text-xl">Welcome {user.displayName}</p>
             <ToShoppingList />
+            <ToMobileList />
             <button className="border-2 border-sky-300 p-2 m-1 rounded-full" onClick={handleSignOut}>
               Sign out
             </button>
