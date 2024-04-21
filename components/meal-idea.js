@@ -50,7 +50,7 @@ function toggleItemDetail(index) {
                         <p className="p-2">Here are some meal ideas using {ingredient}:</p>
                         <ul>
                             {meals.map((meal, index) => (
-                                <li key={meal.idmeal} 
+                                <li key={meal.recipe.uri} 
                                 className={`border-2 p-2 m-1 ${expandedId === index ? '' : 'border-sky-300 hover:bg-sky-500 cursor-pointer'}`}
                                 onClick={() => toggleItemDetail(index)}
                                 >

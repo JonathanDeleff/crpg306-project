@@ -2,7 +2,7 @@
 
 import { useUserAuth } from "../_utils/auth-context";
 import { Header } from "@/components/header";
-import Link from "next/link";
+import { ToShoppingList } from "@/components/buttons";
 
 export default function Page() {
   
@@ -16,11 +16,7 @@ export default function Page() {
     firebaseSignOut();
   }
  
-  const Recipes = () => {
-    return (
-        <Link className="border-2 border-slate-400 p-1 m-1" href="/shoppingList/shoppingPage">shopping List</Link>
-    );
-  };
+  
 
   return(
     <main className="flex flex-col min-h-screen w-screen">
@@ -34,8 +30,8 @@ export default function Page() {
         {user && (
           <div className="flex flex-col justify-center items-center">
             <p className="text-xl">Welcome {user.displayName}</p>
-            <Recipes />
-            <button className="border-2 border-sky-300 p-1 m-1 rounded-full" onClick={handleSignOut}>
+            <ToShoppingList />
+            <button className="border-2 border-sky-300 p-2 m-1 rounded-full" onClick={handleSignOut}>
               Sign out
             </button>
           </div>
