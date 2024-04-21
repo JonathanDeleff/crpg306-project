@@ -29,32 +29,88 @@ export default function Nutrition({ ingredient }) {
 
     const { calories, totalNutrients } = nutritionData;
     return (
-        <div className="mx-auto p-4 bg-white max-w-md shadow-lg rounded-lg text-black overflow-hidden">
+        <div className="mx-auto p-4 bg-white max-w-md w-50 shadow-lg rounded-lg text-black overflow-hidden">
             <h2 className="font-bold text-lg">Nutrition Facts</h2>
-            <h3 className="font-bold">{ingredient}</h3>
+            <h3>per 100g of {ingredient}</h3>
             <hr className="my-2" />
-            <div>
-                <strong className="block">Amount Per 100g</strong>
-            </div>
+    
             <div className="flex justify-between">
-                <strong>Calories</strong> {nutritionData.calories}
+                <strong>Calories:</strong>
+                <span>{nutritionData.calories}</span>
             </div>
             <hr className="my-2" />
-            {nutritionData.totalNutrients.FAT && (
+    
+            <div className="flex justify-between">
+                <strong>Total Fat:</strong>
+                <span>{nutritionData.totalNutrients.FAT.quantity.toFixed(0)}g</span>
+            </div>
+            {nutritionData.totalNutrients.FASAT && (
+                <div className="flex justify-between pl-4">
+                    <strong>Saturated Fat:</strong>
+                    <span>{nutritionData.totalNutrients.FASAT.quantity.toFixed(0)}g</span>
+                </div>
+            )}
+            {nutritionData.totalNutrients.FATRN && (
+                <div className="flex justify-between pl-4">
+                    <strong>Trans Fat:</strong>
+                    <span>{nutritionData.totalNutrients.FATRN.quantity.toFixed(0)}g</span>
+                </div>
+            )}
+            <hr className="my-2" />
+    
+            {nutritionData.totalNutrients.CHOCDF && (
                 <div className="flex justify-between">
-                    <strong>Total Fat</strong> {nutritionData.totalNutrients.FAT.quantity.toFixed(2)}g
+                    <strong>Total Carbohydrates:</strong>
+                    <span>{nutritionData.totalNutrients.CHOCDF.quantity.toFixed(0)}g</span>
+                </div>
+            )}
+            {nutritionData.totalNutrients.FIBTG && (
+                <div className="flex justify-between pl-4">
+                    Dietary Fiber:
+                    <span>{nutritionData.totalNutrients.FIBTG.quantity.toFixed(0)}g</span>
                 </div>
             )}
             {nutritionData.totalNutrients.SUGAR && (
-                <div className="flex justify-between">
-                    <strong>Sugar</strong> {nutritionData.totalNutrients.SUGAR.quantity.toFixed(2)}g
+                <div className="flex justify-between pl-4">
+                    Total Sugars:
+                    <span>{nutritionData.totalNutrients.SUGAR.quantity.toFixed(0)}g</span>
                 </div>
             )}
+            <hr className="my-2" />
+    
             {nutritionData.totalNutrients.PROCNT && (
                 <div className="flex justify-between">
-                    <strong>Protein</strong> {nutritionData.totalNutrients.PROCNT.quantity.toFixed(2)}g
+                    <strong>Protein:</strong>
+                    <span>{nutritionData.totalNutrients.PROCNT.quantity.toFixed(0)}g</span>
+                </div>
+            )}
+            <hr className="my-2" />
+    
+            {nutritionData.totalNutrients.CHOLE && (
+                <div className="flex justify-between">
+                    <strong>Cholesterol:</strong>
+                    <span>{nutritionData.totalNutrients.CHOLE.quantity.toFixed(0)}mg</span>
+                </div>
+            )}
+            {nutritionData.totalNutrients.NA && (
+                <div className="flex justify-between">
+                    <strong>Sodium:</strong>
+                    <span>{nutritionData.totalNutrients.NA.quantity.toFixed(0)}mg</span>
+                </div>
+            )}
+            {nutritionData.totalNutrients.FE && (
+                <div className="flex justify-between">
+                    <strong>Iron:</strong>
+                    <span>{nutritionData.totalNutrients.FE.quantity.toFixed(0)}mg</span>
+                </div>
+            )}
+            {nutritionData.totalNutrients.CA && (
+                <div className="flex justify-between">
+                    <strong>Calcium:</strong>
+                    <span>{nutritionData.totalNutrients.CA.quantity.toFixed(0)}mg</span>
                 </div>
             )}
         </div>
     );
+    
 }
