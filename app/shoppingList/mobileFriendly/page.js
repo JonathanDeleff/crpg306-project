@@ -66,8 +66,8 @@ return (
     <div className="flex flex-1 overflow-auto m-2">
       <div className="flex justify-center w-full">
         <div className="flex flex-col items-center">
-          <NewItem onSubmit={(item) => handleSubmit(item)}/>
           <Item items={items} onItemSelect={handleItemSelect} onButtonClick={handleRemoveItem}/> 
+          <NewItem onSubmit={(item) => handleSubmit(item)}/>
         </div>
       </div>
     </div>
