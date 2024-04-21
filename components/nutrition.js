@@ -27,9 +27,12 @@ export default function Nutrition({ ingredient }) {
         return <p>Select an ingredient to show nutrition facts.</p>;
     }
 
-    const { calories, totalNutrients } = nutritionData;
+    
     return (
-        <div className="mx-auto p-4 bg-white max-w-md w-50 shadow-lg rounded-lg text-black overflow-hidden">
+        <div 
+            className="mx-auto p-4 bg-white shadow-lg rounded-lg text-black overflow-hidden"
+            style={{ width: "300px" }}
+        >
             <h2 className="font-bold text-lg">Nutrition Facts</h2>
             <h3>per 100g of {ingredient}</h3>
             <hr className="my-2" />
