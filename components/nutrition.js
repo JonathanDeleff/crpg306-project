@@ -49,13 +49,13 @@ export default function Nutrition({ ingredient }) {
             </div>
             {nutritionData.totalNutrients.FASAT && (
                 <div className="flex justify-between pl-4">
-                    <strong>Saturated Fat:</strong>
+                    Saturated Fat:
                     <span>{nutritionData.totalNutrients.FASAT.quantity.toFixed(0)}g</span>
                 </div>
             )}
             {nutritionData.totalNutrients.FATRN && (
                 <div className="flex justify-between pl-4">
-                    <strong>Trans Fat:</strong>
+                    Trans Fat:
                     <span>{nutritionData.totalNutrients.FATRN.quantity.toFixed(0)}g</span>
                 </div>
             )}

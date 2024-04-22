@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import NutritionLabel from "@/components/recipe-label";
 
 
 async function fetchMealIdeas(ingredient) {
@@ -47,12 +48,12 @@ function toggleItemDetail(index) {
                     <p>No meals found for {ingredient}.</p>
                 ) : (
                     <>
-                        <p className="p-2">Here are some meal ideas using {ingredient}:</p>
+                        <p className="p-2">Here are some recipe ideas using {ingredient}:</p>
                         <ul>
                             {meals.map((meal, index) => (
-                                <li key={meal.recipe.uri} 
-                                className={`border-2 p-2 m-1 ${expandedId === index ? '' : 'border-sky-300 hover:bg-sky-500 cursor-pointer'}`}
-                                onClick={() => toggleItemDetail(index)}
+                                <li key={meal.recipe.uri}
+                                    className={`border-2 p-2 m-1 ${expandedId === index ? '' : 'border-sky-300 hover:bg-sky-500 cursor-pointer'}`}
+                                    onClick={() => toggleItemDetail(index)}
                                 >
                                     {meal.recipe.label}
                                     {expandedId === index && (
@@ -63,7 +64,11 @@ function toggleItemDetail(index) {
                                                 ))}
                                             </ul>
                                             <a className="underline text-sky-400" href={meal.recipe.url} target="_blank" rel="noopener noreferrer">Recipe</a>
-                                            
+                                            {meal.recipe.totalNutrients ? (
+                                                <NutritionLabel nutritionData={meal.recipe}/>
+                                            ) : (
+                                                <p>No nutrition data available.</p>
+                                            )}
                                         </div>
                                     )}
                                 </li>
