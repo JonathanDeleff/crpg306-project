@@ -40,11 +40,11 @@ function NutritionLabel({ nutritionData }) {
             </div>
             <div className="flex justify-between pl-4">
                 Dietary Fiber:
-                <span>{nutritionData.totalNutrients.FIBTG.quantity.toFixed(1)}g</span>
+                <span>{nutritionData.totalNutrients.FIBTG.quantity.toFixed(0)}g</span>
             </div>
             <div className="flex justify-between pl-4">
-                Total Sugars:
-                <span>{(nutritionData.totalNutrients.CHOCDF.quantity).toFixed(1)}g</span>
+                Sugars:
+                <span>{(nutritionData.totalNutrients.SUGAR.quantity).toFixed(0)}g</span>
             </div>
             <hr className="my-2" />
 
