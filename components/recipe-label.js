@@ -12,7 +12,7 @@ function NutritionLabel({ nutritionData }) {
 
             <div className="flex justify-between">
                 <strong>Calories:</strong>
-                <span>{nutritionData.totalNutrients.ENERC_KCAL.quantity.toFixed(0)} kcal</span>
+                <span>{nutritionData.totalNutrients.ENERC_KCAL.quantity.toFixed(0)}</span>
             </div>
             <hr className="my-2" />
 

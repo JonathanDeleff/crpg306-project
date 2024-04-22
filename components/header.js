@@ -2,17 +2,24 @@ import Link from "next/link";
 
 const HomeButton = () => {
     return (
-        <Link className="" href="/">Home</Link>
+        <Link className="underline" href="/">Home</Link>
     );
 
 } 
 
 const ShoppingList = () => {
     return (
-        <Link className="p-3" href="/shoppingList">Shopping List</Link>
+        <Link className="p-3 underline" href="/shoppingList"><p>Shopping List</p></Link>
     );
 
 } 
+
+export const Login = () => {
+    return (
+        <Link className="p-3 underline" href="/shoppingList"><p>Login</p></Link>
+    );
+
+}
 
 export const Header = () => {
     return (
